@@ -5,11 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webcam</title>
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/af5e23e73e.js" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>  
 </head>
 <body>
-    <video autoplay></video>
-    <canvas></canvas>
-    <button>Tirar foto</button>
+    <div class="camContent">
+        <video class="camera" autoplay></video>
+        <div class="divCanvas">
+            <canvas></canvas>
+        </div>
+        <div class="btnTake">
+            <button class="btnPhoto" onclick="sendEmail()"><i class="fa-solid fa-camera"></i> Tirar foto</button>
+        </div>
+    </div>
 
     <script type="text/javascript" src="js/scripts.js"></script>
 </body>

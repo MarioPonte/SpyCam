@@ -1,0 +1,30 @@
+body{
+    background-color: #667f96;
+}
+
+.camContent{
+    margin: auto;
+    text-align: center;
+}
+
+.camera{
+    border-radius: 10px;
+}
+
+.btnPhoto{
+    font-size: 22px;
+    border: 2px solid white;
+    border-radius: 100vw;
+    padding:10px 20px 10px 20px;
+    background-color: #566c80;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btnPhoto:hover{
+    border: 2px solid white;
+    background-color: white;
+    color: #566c80;
+}
