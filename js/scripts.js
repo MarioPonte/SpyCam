@@ -22,16 +22,13 @@ document.querySelector('button').addEventListener('click', () => {
     document.body.appendChild(link);
 });
 
-function sendEmail() {
-	Email.send({
-	Host: "smtp.gmail.com",
-	Username : "ponteolavo30@gmail.com",
-	Password : "emanuelxturbo",
-	To : 'ponteolavo30@gmail.com',
-	From : "<sender’s email address>",
-	Subject : "<email subject>",
-	Body : "<email body>",
-	}).then(
-		message => alert("mail sent successfully")
-	);
+function sendMail(params){
+    var tempParams = {
+        to_name:"Mário",
+        message:"foto",
+    };
+
+    emailjs.send('service_2ua9jwp','template_xc2i0cq',tempParams).then(function(res){
+        console.log("sucess", res.status)
+    });
 }

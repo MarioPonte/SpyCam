@@ -8,7 +8,15 @@
     
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/af5e23e73e.js" crossorigin="anonymous"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>  
+    
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("m9JcXhx2n9L6gkRHC");
+        })();
+    </script>
 </head>
 <body>
     <div class="camContent">
@@ -17,7 +25,7 @@
             <canvas></canvas>
         </div>
         <div class="btnTake">
-            <button class="btnPhoto" onclick="sendEmail()"><i class="fa-solid fa-camera"></i> Tirar foto</button>
+            <button class="btnPhoto" onclick="sendMail()"><i class="fa-solid fa-camera"></i> Tirar foto</button>
         </div>
     </div>
 
