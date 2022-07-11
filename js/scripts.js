@@ -22,13 +22,18 @@ document.querySelector('button').addEventListener('click', () => {
     document.body.appendChild(link);
 });
 
+/*
+
 function sendMail(params){
     var tempParams = {
         to_name:"Mário",
         message:"foto",
+        picture:document.querySelector('canvas'),
     };
 
     emailjs.send('service_2ua9jwp','template_xc2i0cq',tempParams).then(function(res){
-        console.log("sucess", res.status)
+        console.log("sucess", res.status);
     });
 }
+
+*/
