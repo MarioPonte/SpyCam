@@ -17,23 +17,21 @@ document.querySelector('button').addEventListener('click', () => {
     context.drawImage(video, 0, 0);
     var link = document.createElement('a');
     link.download = "foto.png";
-    link.href = canvas.toDataURL();
+    link.href = canvas.toDataURL("image/jpeg", 0.1);
     link.textContent = "Clique para baixar a foto";
     document.body.appendChild(link);
-});
-
-function sendMail(params){
-
-    var canvas = document.querySelector('canvas');
-    var base64 = canvas.toDataURL();
 
     var tempParams = {
         to_name:"Mário",
         message:"foto",
-        content: base64,
+        content: "google.com",
     };
 
+    console.log(link.href);
+
+    /*
     emailjs.send('service_2ua9jwp','template_xc2i0cq',tempParams).then(function(res){
         console.log("sucess", res.status);
     });
-}
+    */
+});
