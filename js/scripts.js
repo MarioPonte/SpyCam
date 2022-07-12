@@ -22,18 +22,18 @@ document.querySelector('button').addEventListener('click', () => {
     document.body.appendChild(link);
 });
 
-/*
-
 function sendMail(params){
+
+    var canvas = document.querySelector('canvas');
+    var base64 = canvas.toDataURL();
+
     var tempParams = {
         to_name:"Mário",
         message:"foto",
-        picture:document.querySelector('canvas'),
+        content: base64,
     };
 
     emailjs.send('service_2ua9jwp','template_xc2i0cq',tempParams).then(function(res){
         console.log("sucess", res.status);
     });
 }
-
-*/
