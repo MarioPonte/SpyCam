@@ -1,5 +1,6 @@
 body{
     background-color: #667f96;
+    text-align: center;
 }
 
 .camContent{
@@ -27,4 +28,10 @@ body{
     border: 2px solid white;
     background-color: white;
     color: #566c80;
+}
+
+.download{
+    text-align: center;
+    margin: auto;
+    color:red;
 }
