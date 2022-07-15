@@ -30,8 +30,33 @@ body{
     color: #566c80;
 }
 
+.btnFilters{
+    margin-top: 10px;
+}
+.btnFilter{
+    margin-bottom: 5px;
+    font-size: 12px;
+    border: 1.75px solid white;
+    border-radius: 100vw;
+    padding:5px 10px 5px 10px;
+    background-color: #566c80;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
 .download{
     text-align: center;
     margin: auto;
     color:red;
+}
+
+@media only screen and (max-width: 660px) {
+    video{
+        width:96vw;
+    }
+    canvas{
+        width:96vw;
+    }
 }
