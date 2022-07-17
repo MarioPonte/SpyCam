@@ -3,6 +3,11 @@ body{
     text-align: center;
 }
 
+canvas{
+    width:200px;
+    border-radius: 5px;
+}
+
 .camContent{
     margin: auto;
     text-align: center;
@@ -57,6 +62,24 @@ body{
         width:96vw;
     }
     canvas{
-        width:96vw;
+        width:30vw;
+    }
+
+    #btnPhotoTake{
+        font-size: 12px;
+        padding:5px 10px 5px 10px;
+    }
+
+    .btnFilter{
+        margin-bottom: 5px;
+        font-size: 8px;
+        border: 1.75px solid white;
+        border-radius: 100vw;
+        padding:5px 10px 5px 10px;
+        background-color: #566c80;
+        color: white;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+        cursor: pointer;
+        transition: 0.25s;
     }
 }
