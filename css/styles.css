@@ -3,7 +3,11 @@ body{
     text-align: center;
 }
 
-canvas{
+canvas {
+    top: 10px;
+}
+
+#imgCanvas{
     width:200px;
     border-radius: 5px;
 }
@@ -61,7 +65,7 @@ canvas{
     video{
         width:96vw;
     }
-    canvas{
+    #imgCanvas{
         width:30vw;
     }
 

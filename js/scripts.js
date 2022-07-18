@@ -5,14 +5,15 @@ Promise.all([
     faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
     faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
     faceapi.nets.faceExpressionNet.loadFromUri('/models'),
-]).then(startVideo());
+]).then(startVideo);
 
 (function(){
     emailjs.init("m9JcXhx2n9L6gkRHC");
 })();
 
+var video = document.querySelector('video');
+
 function startVideo(){
-    var video = document.querySelector('video');
 
     navigator.mediaDevices.getUserMedia({video:true})
     .then(stream => {
@@ -33,7 +34,7 @@ function startVideo(){
     var sepia = document.getElementById("sepia");
 
     document.getElementById('btnPhotoTake').addEventListener('click', () => {
-        var canvas = document.querySelector('canvas');
+        var canvas = document.getElementById('imgCanvas');
         canvas.height = video.videoHeight;
         canvas.width = video.videoWidth;
         var context = canvas.getContext('2d');
@@ -84,3 +85,18 @@ function startVideo(){
         document.querySelector('canvas').style.filter="sepia(60%)";
     });
 }
+
+video.addEventListener('play', () => {
+    const faceCanvas = faceapi.createCanvasFromMedia(video)
+    document.body.append(faceCanvas)
+    const displaySize = { width: video.videoWidth, height: video.videoHeight }
+    faceapi.matchDimensions(faceCanvas, displaySize)
+    setInterval(async () => {
+        const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
+        const resizedDetections = faceapi.resizeResults(detections, displaySize)
+        faceCanvas.getContext('2d').clearRect(0, 0, faceCanvas.width, faceCanvas.height)
+        faceapi.draw.drawDetections(faceCanvas, resizedDetections)
+        faceapi.draw.drawFaceLandmarks(faceCanvas, resizedDetections)
+        faceapi.draw.drawFaceExpressions(faceCanvas, resizedDetections)
+    }, 100)
+});
