@@ -46,6 +46,7 @@ function startVideo(){
         link.download = "foto.png";
         link.href = canvas.toDataURL("image/jpeg", 0.1);
         link.textContent = "Clique para baixar a foto";
+        link.setAttribute('id','downloadPicture');
         document.body.appendChild(link);
 
         var tempParams = {
