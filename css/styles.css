@@ -3,6 +3,11 @@ body{
     text-align: center;
 }
 
+video{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
 canvas {
     top: 10px;
 }
@@ -20,6 +25,8 @@ canvas {
 #imgCanvas{
     width:200px;
     border-radius: 5px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 .camContent{
